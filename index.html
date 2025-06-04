@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Login Lavadinhos (mobile)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!-- Tela de Login -->
+<div id="telaLogin">
+  <div class="tela-login">
+    <img src="https://i.ibb.co/Ndx6XWfP/Blue-Flat-Illustrative-Cleaning-Laundry-Logo-3-1.png" class="logo-login" />
+
+    <div class="input-container">
+      <input type="text" id="usuario" placeholder="E-mail ou usuário" />
+      <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" class="icone-input" alt="Ícone de envelope" />
+    </div>
+
+    <div class="input-container">
+      <input type="password" placeholder="Senha" />
+      <img src="https://cdn-icons-png.flaticon.com/512/3064/3064155.png" class="icone-input" alt="Ícone de cadeado" />
+    </div>
+
+    <button class="botao-login" onclick="fazerLogin()">Login</button>
+
+    <p class="esqueci-senha" onclick="abrirPopup()">Esqueci minha senha</p>
+
+    <!-- Popup -->
+    <div id="popup" class="popup-container">
+      <div class="popup-box">
+        <span class="fechar-popup" onclick="fecharPopup()">×</span>
+        <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Ícone de e-mail" class="popup-icon" />
+        <p>Enviamos um e-mail com instruções para redefinir sua senha.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Tela Principal do Usuário -->
+<div id="telaUsuario" style="display: none;">
+<div class="iphone-mockup">
+  <div class="tela-principal">
+    <div class="botao-menu" onclick="abrirMenu()">☰</div>
+    <div class="botao-notificacao" onclick="abrirNotificacoes()">🔔</div>
+
+    <h2 id="boasVindas">Bem-vindo, cliente!</h2>
+
+<!-- Botão para escolher endereço -->
+<button class="botao-endereco" onclick="abrirPopupEndereco()">Escolha seu endereço</button>
+<div class="campo-busca">
+  <img src="https://cdn-icons-png.flaticon.com/512/622/622669.png" alt="lupa" class="icone-lupa" />
+  <input type="text" placeholder="Busque por lavanderia ou serviço" />
+</div>
+<hr class="linha-separadora" />
+<p class="titulo-secao">
+  <span class="icone-localizacao">📍</span>
+  Lavanderias próximas de você
+</p>
+<!-- Card 1 -->
+<div class="card-lavanderia" onclick="irParaTelaServico()">
+  <img src="https://i.ibb.co/fYRMNyKm/del-castillo-removebg-preview.png" alt="Logo" />
+  <div class="info">
+    <h4>Del Castillo</h4>
+    <p class="avaliacao">4.9 ⭐⭐⭐⭐⭐</p>
+    <p class="status">1.2 km • Aberta</p>
+  </div>
+</div>
+
+<!-- Card 2 -->
+<div class="card-lavanderia">
+  <img src="https://i.ibb.co/1tNNhwNc/evora-removebg-preview.png" alt="Logo" />
+  <div class="info">
+    <h4>Évora</h4>
+    <p class="avaliacao">4.0 ⭐⭐⭐⭐</p>
+    <p class="status">3.5 km • Aberta</p>
+  </div>
+</div>
+
+<!-- Card 3 -->
+<div class="card-lavanderia">
+  <img src="https://i.ibb.co/1JJxfLvM/my-home-removebg-preview.png" alt="Logo" />
+  <div class="info">
+    <h4>My Home</h4>
+    <p class="avaliacao">3.8 ⭐⭐⭐</p>
+    <p class="status">7.2 km • Aberta</p>
+  </div>
+</div>
+<!-- Card 4 -->
+<div class="card-lavanderia">
+  <img src="https://i.ibb.co/tpWDNdL2/5-a-sec.png" alt="Logo" />
+  <div class="info">
+    <h4>5àSec</h4>
+    <div class="detalhes-card">
+    <p class="avaliacao">4.5 ⭐⭐⭐⭐</p>
+    <p class="status">13.1 km • Fechada</p>
+  </div>
+</div>
+
+<!-- Popup de endereço -->
+<div id="popupEndereco" class="popup-endereco">
+  <div class="popup-endereco-box">
+    <span class="fechar-popup" onclick="fecharPopupEndereco()">×</span>
+    <h3>Escolha seu endereço</h3>
+
+    <!-- Simulação de mapa -->
+    <img id="mapaFake" src="https://i.ibb.co/bMLDTFsq/map-s.png" />
+
+    <!-- Campo para digitar o endereço -->
+    <input type="text" id="campoEndereco" placeholder="Digite seu endereço..." />
+
+    <!-- Botão para confirmar -->
+    <button onclick="salvarEndereco()">Confirmar</button>
+  </div>
+</div>
+
+    <!-- Menu lateral -->
+    <div class="overlay" id="overlay" onclick="fecharMenu()"></div>
+    <div id="menuLateral" class="menu-lateral">
+      <span class="fechar-menu" onclick="fecharMenu()">×</span>
+          <!-- Perfil do usuário -->
+    <div class="usuario-header">
+      <img src="https://i.imgur.com/BQHYdUE.png" alt="Usuário" />
+      <h2 id="ola-usuario">Olá, cliente!</h2>
+    </div>
+      <ul>
+      <li>👤 Meu Perfil</li>
+      <li>⭐ Lavanderias Favoritas</li>
+      <li>📨 Notificações</li>
+      <li>📄 Histórico de Pedidos</li>
+      <li>⚙️ Configurações</li>
+      <li>❓ Central de Ajuda</li>
+      <li>🚪 Logout</li>
+      </ul>
+    <div class="versao-app">
+      <p>Lavadinhos v1.0.0</p>
+    </div>
+  </div>
+</div>
+
+    <!-- Notificações -->
+    <div class="overlay-notificacoes" id="overlayNotificacoes" onclick="fecharNotificacoes()"></div>
+    <div id="painelNotificacoes" class="painel-notificacoes">
+      <span class="fechar-notificacoes" onclick="fecharNotificacoes()">×</span>
+      <h3>Notificações</h3>
+      <ul>
+    <li>📦 Seu pedido foi concluído com sucesso!</li>
+    <li>🧼 Lavanderia Del Castillo agradece a preferência!</li>
+    <li>📅 Lembrete: lavagem programada amanhã às 10h.</li>
+    <li>💬 Você recebeu uma nova mensagem da My Home.</li>
+    <li>⭐ Avalie sua última experiência conosco!</li>
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="telaServico" style="display: none;">
+  <div class="tela-principal">
+    <!-- botão de voltar -->
+    <div class="botao-voltar" onclick="voltarTelaUsuario()">←</div>
+
+    <!-- Logo -->
+    <img src="https://i.ibb.co/fYRMNyKm/del-castillo-removebg-preview.png" class="logo-lavanderia" alt="Logo" />
+
+    <!-- Informações -->
+    <div class="dados-lavanderia">
+      <p class="atendimentos">Doméstica • Hospitalar • Industrial</p>
+      <h3 class="nome-lavanderia">Lavanderia Del Castillo – Barueri</h3>
+      <p class="avaliacao">⭐⭐⭐⭐⭐ 5.0</p>
+      <p class="detalhes">📍 1.2 km • ⏱️ Prazo mínimo: 2 dias • 🚚 Entrega e retirada</p>
+    </div>
+
+    <hr class="linha-separadora" />
+    <h4 class="titulo-servicos">Escolha o serviço</h4>
+    <div class="card-servico selecionavel"onclick="irParaTelaSolicitacao()"
+>
+      <h5>🧺 Lavagem Tradicional</h5>
+      <p>Roupas do dia a dia, cama, mesa e banho.</p>
+      <span>A partir de R$ 25</span>
+    </div>
+
+    <div class="card-servico selecionavel">
+      <h5>💧 Lavagem a Seco</h5>
+      <p>Tecidos delicados que não podem ser imersos em água.</p>
+      <span>A partir de R$ 45</span>
+    </div>
+
+    <div class="card-servico selecionavel">
+      <h5>🛋️ Higienização de Estofados</h5>
+      <p>Tapetes, almofadas e poltronas.</p>
+      <span>A partir de R$ 60</span>
+    </div>
+
+    <div class="card-servico selecionavel">
+      <h5>👕 Lavagem de Uniformes</h5>
+      <p>Setores de saúde, alimentícios e hotelaria.</p>
+      <span>Valor a combinar (quantidade)</span>
+    </div>
+  </div>
+</div>
+<div id="telaSolicitacao" style="display: none;">
+  <div class="tela-principal">
+<div class="bolinhas-etapas">
+  <div class="bolinha etapa-ativa"></div>
+  <div class="bolinha"></div>
+  <div class="bolinha"></div>
+</div>
+<div id="topoApp" class="topo-app">
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <button class="notificacao-btn" onclick="toggleNotificacoes()">🔔</button>
+</div>
+    <h3 class="titulo-solicitacao">Detalhes da Solicitação</h3>
+<div class="quantidade-box">
+  <label class="label-centralizado">Quantidade de peças:</label>
+  <input type="number" class="input-numero" placeholder="Nº" />
+</div>
+    <div class="checkbox-grupo">
+      <label><input type="checkbox" /> Retirada por motoboy</label>
+      <label><input type="checkbox" /> Entrega por motoboy</label>
+    </div>
+
+    <p class="info-prazo">* Prazo mínimo de 2 dias entre retirada e entrega.</p>
+
+    <div class="datas">
+      <label class="label-centralizado">Selecione as datas:</label>
+<input id="calendario" type="text" placeholder="Escolha o intervalo de datas" />
+    </div>
+
+<div class="grupo-horarios">
+  <label for="horaRetirada">Horário de retirada:</label>
+  <select id="horaRetirada" class="select-hora"></select>
+
+  <label for="horaEntrega">Horário de entrega:</label>
+  <select id="horaEntrega" class="select-hora"></select>
+</div>
+    <label>Observações:</label>
+    <textarea class="caixa-observacao" rows="3" placeholder="Alguma preferência ou observação?"></textarea>
+
+    <div class="botoes-final">
+      <button onclick="voltarParaTelaServico()">Voltar</button>
+      <button onclick="irParaTelaPagamento()">Próximo</button>
+    </div>
+  </div>
+</div>
+<div id="telaPagamento" class="tela-principal" style="display: none;">
+  <div class="bolinhas-etapas">
+  <div class="bolinha"></div>
+  <div class="bolinha etapa-ativa"></div>
+  <div class="bolinha"></div>
+</div>
+<div id="topoApp" class="topo-app">
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <button class="notificacao-btn" onclick="toggleNotificacoes()">🔔</button>
+</div>
+    <h2 class="titulo-pagamento">💵 Pagamento</h2>
+  <hr class="linha-separadora" />
+    <p class="subtitulo">Resumo do pedido</p>
+    <div class="resumo-pedido">
+      <p><strong>Serviço:</strong> Lavagem Tradicional</p>
+      <p><strong>Quantidade:</strong> 5 peças</p>
+      <p><strong>Retirada:</strong> R$ 5,00</p>
+      <p><strong>Entrega:</strong> R$ 5,00</p>
+      <p><strong>Subtotal:</strong> R$ 35,00</p>
+    </div>
+
+    <div class="cupom">
+      <input type="text" placeholder="Inserir cupom de desconto" />
+    </div>
+
+    <div class="valor-final">Valor total: R$ 35,00</div>
+
+    <div class="pagamento-opcoes">
+  <label>
+    <input type="radio" name="pagamento" />
+    <img src="https://i.ibb.co/JWWD8DLg/cart-o-credito-removebg-preview.png" class="icone-pagamento" />
+    Cartão de Crédito
+  </label>
+
+  <label>
+    <input type="radio" name="pagamento" />
+    <img src="https://i.ibb.co/hR9SVJmG/debito.png" class="icone-pagamento" />
+    Cartão de Débito
+  </label>
+
+  <label>
+    <input type="radio" name="pagamento" />
+    <img src="https://i.ibb.co/Cs8cQ0Vs/pix.png" class="icone-pagamento" />
+    PIX
+  </label>
+</div>
+
+    <p class="seguranca">🔒 Pagamento seguro e protegido</p>
+    <p class="info-email">A confirmação do pagamento será enviada por e-mail.</p>
+
+    <div class="botoes-pagamento">
+      <button onclick="voltarParaSolicitacao()">Voltar</button>
+      <button onclick="irParaTelaConfirmacao()">Finalizar</button>
+    </div>
+  </div>
+</div>
+<div id="telaConfirmacao" class="tela-principal" style="display: none;">
+  <div class="bolinhas-etapas">
+    <div class="bolinha"></div>
+    <div class="bolinha"></div>
+    <div class="bolinha etapa-ativa"></div>
+  </div>
+<div id="topoApp" class="topo-app">
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+  <button class="notificacao-btn" onclick="toggleNotificacoes()">🔔</button>
+</div>
+  <h2 class="titulo-confirmacao">Detalhes do Pedido</h2>
+
+  <div class="info-pedido">
+    <p>ID do pedido: <strong>#1010</strong> </p>
+    <p>Serviço: <strong>Lavagem tradicional – 05 peças</strong></p>
+    <p>Frete: <strong>Sim</strong></p>
+    <p>Forma de pagamento: <strong>PIX</strong></p>
+    <p>Valor total: <strong>R$35,00</strong></p>
+    <p>Data de retirada: <strong>25/05 – 11h</strong></p>
+    <p>Previsão de entrega: <strong>27/05 – 15h</strong></p>
+  </div>
+
+  <h3 class="titulo-andamento">Andamento do pedido</h3>
+
+  <div class="linha-do-tempo">
+    <div class="etapa">🛵 Retirada a caminho</div>
+    <div class="etapa etapa-destaque">🧺 Em lavagem</div>
+    <div class="etapa">🧼 Finalizando</div>
+    <div class="etapa">📦 Pronto para entrega</div>
+    <div class="etapa">🚚 Em rota</div>
+    <div class="etapa">✅ Entregue</div>
+  </div>
+
+  <div class="botoes-comprovante-chat">
+    <button class="botao-secundario" onclick="abrirPopupComprovante()">Ver comprovante</button>
+<button class="botao-secundario" onclick="abrirPopupChat()">Chat com a lavanderia</button>
+  </div>
+
+  <button class="botao-principal" onclick="voltarParaTelaUsuario()">Início</button>
+</div>
+<!-- POPUP COMPROVANTE -->
+<div id="popupComprovante" class="popup-overlay">
+  <div class="popup-conteudo">
+    <span class="fechar-popup" onclick="fecharPopupComprovante()">×</span>
+    <h3>Comprovante de Pagamento</h3>
+    <p><strong>ID do pedido:</strong> #1010</p>
+    <p><strong>Serviço:</strong> Lavagem Tradicional</p>
+    <p><strong>Peças:</strong> 05</p>
+    <p><strong>Frete:</strong> Sim</p>
+    <p><strong>Pagamento:</strong> PIX</p>
+    <p><strong>Valor total:</strong> R$ 35,00</p>
+    <p><strong>Identificador:</strong> is4cdcd6ca06ed4e40a5c4e58bfa61efc</p>
+    <p><strong>Data:</strong> 25/05/2025 - 10h32</p>
+    <p><strong>Status:</strong> Aprovado ✅</p>
+  </div>
+</div>
+
+<!-- POPUP CHAT -->
+<div id="popupChat" class="popup-overlay">
+  <div class="popup-conteudo">
+    <span class="fechar-popup" onclick="fecharPopupChat()">×</span>
+    <h3>Chat com a Lavanderia</h3>
+    <div class="chat-mensagens">
+      <div class="mensagem-recebida">Olá! Seu pedido está em lavagem. 😊</div>
+      <div class="mensagem-enviada">Obrigado pelo aviso!</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" placeholder="Digite sua mensagem..." />
+      <button>Enviar</button>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

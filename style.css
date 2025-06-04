@@ -1,0 +1,1062 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Tela Login */
+.tela-login {
+  width: 430px;
+  height: 867px;
+  background-color: #cfeeff;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+}
+
+.logo-login {
+  width: 80%;
+  margin-bottom: 60px;
+  margin-top: 40px;
+}
+
+.input-container {
+  position: relative;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.input-container input {
+  width: 80%;
+  padding: 12px 30px 12px 15px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.icone-input {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  opacity: 0.6;
+}
+
+.botao-login {
+  background-color: #305bab;
+  color: #fff;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 60%;
+  margin-top: 40px;
+}
+
+.botao-login:hover {
+  background-color: #234a92;
+}
+
+.esqueci-senha {
+  color: #305bab;
+  font-size: 14px;
+  margin-top: 15px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-align: center;
+  display: block;
+}
+
+/* Popup */
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background-color: #fff;
+  padding: 30px 20px;
+  border-radius: 12px;
+  text-align: center;
+  width: 300px;
+  font-size: 14px;
+  position: relative;
+}
+
+.fechar-popup {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #888;
+}
+
+.popup-icon {
+  width: 40px;
+  margin-bottom: 10px;
+}
+
+/* Tela Principal */
+.iphone-mockup {
+  width: 430px;
+  height: 867px;
+  background-color: #cfeeff;
+  border-radius: 30px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+}
+
+.tela-principal {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.botao-menu, .botao-notificacao {
+  font-size: 24px;
+  position: absolute;
+  top: 20px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.botao-menu {
+  left: 20px;
+}
+
+.botao-notificacao {
+  right: 20px;
+}
+
+#boasVindas {
+  margin-top: 70px;
+  text-align: center;
+  font-size: 20px;
+}
+/* Menu lateral */
+.menu-lateral {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 95%;
+  background-color: #fff;
+  z-index: 100;
+  padding: 20px;
+  transition: left 0.3s ease;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+
+.menu-lateral ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+}
+
+.menu-lateral ul li {
+  margin: 15px 0;
+  font-size: 16px;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 90;
+}
+
+/* Notificações */
+.painel-notificacoes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 0;
+  background-color: #e2f6fd;
+  z-index: 100;
+  overflow: hidden;
+  transition: height 0.6s ease, padding 0.6s ease;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.painel-notificacoes h3 {
+  margin: 20px;
+}
+
+.painel-notificacoes ul {
+  list-style: none;
+  padding: 0 20px 20px 20px;
+}
+
+.painel-notificacoes li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.fechar-menu,
+.fechar-notificacoes {
+  font-size: 22px;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.overlay-notificacoes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 90;
+}
+
+.usuario-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.usuario-header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.usuario-header p {
+  font-weight: bold;
+  color: #305bab;
+}
+
+.versao-app {
+  text-align: center;
+  font-size: 12px;
+  color: #aaa;
+  margin-top: auto;
+}
+.botao-notificacao {
+  font-size: 22px;
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 10;
+}
+
+.notificacoes-topo {
+  position: absolute;
+  top: 0;
+  left: 100;
+  width: 20%;
+  height: 0;
+  background-color: #cfeeff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 0 20px;
+  transition: height 0.3s ease, padding 0.3s ease;
+  z-index: 100;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.fechar-notificacoes {
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  cursor: pointer;
+  color: #666;
+}
+
+.lista-notificacoes {
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+}
+
+.lista-notificacoes li {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+.overlay-notificacoes {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+  z-index: 90;
+  border-radius: 30px;
+}
+.botao-endereco {
+  background-color: #ffffff;
+  border: 2px solid #305bab;
+  color: #305bab;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 20px auto 0 auto; /* <-- centraliza horizontalmente */
+  display: block; /* necessário para margin funcionar */
+}
+
+/* Popup de endereço */
+.popup-endereco {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 430px;
+  height: 867px;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.popup-endereco-box {
+  background-color: #fff;
+  width: 90%;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+}
+
+#mapaFake {
+  width: 100%;
+  height: auto;
+  max-width: 360px; /* limite opcional */
+  display: block;
+  margin: 10px auto;
+  border-radius: 12px;
+}
+
+
+
+.popup-endereco input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.popup-endereco button {
+  background-color: #305bab;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.fechar-popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #888;
+}
+.campo-busca {
+  width: 67%;
+  margin: 20px auto 0 auto;
+  position: relative;
+}
+
+.campo-busca input {
+  width: 80%;
+  padding: 12px 12px 12px 40px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  outline: none;
+}
+
+.icone-lupa {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  opacity: 0.6;
+}
+.titulo-secao {
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a1a1a;
+  text-align: center;
+  margin-top: 25px;
+}
+.linha-separadora {
+  width: 90%;
+  max-width: 390px;
+  margin: 25px auto 0 auto;
+  border: none;
+  border-top: 1px solid #bbb;
+  opacity: 0.6;
+}
+.icone-localizacao {
+  margin-right: 8px;
+  font-size: 16px;
+}
+.card-lavanderia {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 0px 15px;
+  margin: 20px auto;
+  width: 90%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.card-lavanderia img {
+  width: 110px;
+  height: 110px;
+  border-radius: 20px;
+  object-fit: cover;
+  margin-right:15px;
+}
+
+.card-lavanderia .info {
+  flex-grow: 1;
+}
+
+.card-lavanderia .avaliacao {
+  font-size: 14px;
+  margin: 0;
+  color: #1a1a1a;
+  font-weight: bold;
+  text-align: left;
+
+}
+
+.card-lavanderia .status {
+  font-size: 12px;
+  margin-top: 4px;
+  color: #555;
+  text-align: left;
+}
+.popup-lavanderia {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 430px; /* ocupará os 430px da tela */
+  height: 867px; /* ocupará os 867px */
+  background-color: #e2f5ff;
+  z-index: 999;
+  border-radius: 30px;
+  overflow-y: auto;
+}
+
+
+.popup-conteudo {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.logo-lavanderia {
+  width: 60%;
+  display: block;
+  margin: 0 auto -20px auto;
+}
+
+.fechar-popup {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+}
+
+.atendimentos {
+  text-align: center;
+  font-size: 13px;
+  color: #777;
+  margin: 5px 0;
+}
+
+.nome-lavanderia {
+  text-align: center;
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+.avaliacao, .detalhes {
+  text-align: center;
+  font-size: 13px;
+  color: #444;
+  margin: 3px 0;
+}
+
+.titulo-servicos {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+.card-servico.selecionavel {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  padding: 12px;
+  margin-top: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.card-servico.selecionavel:hover {
+  background-color: #eaf3ff;
+}
+
+.card-servico.selecionavel.selecionado {
+  border-color: #305bab;
+  background-color: #e1ecff;
+}
+
+.card-servico h5 {
+  margin: 0;
+  font-size: 16px;
+  color: #305bab;
+}
+
+.card-servico p {
+  margin: 5px 0;
+  font-size: 13px;
+  color: #444;
+}
+
+.card-servico span {
+  font-weight: bold;
+  font-size: 13px;
+  color: #000;
+}
+.botao-voltar {
+  font-size: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  color: #305bab;
+  font-weight: bold;
+}
+#telaServico {
+  display: none;
+  width: 430px;
+  height: 867px;
+  background-color: #cfeeff;
+  border-radius: 30px;
+  overflow-y: auto;
+  position: relative;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+#telaSolicitacao {
+  display: none;
+  width: 430px;
+  height: 867px;
+  background-color: #cfeeff;
+  border-radius: 30px;
+  overflow-y: auto;
+  font-family: Arial, sans-serif;
+}
+
+.titulo-solicitacao {
+  text-align: center;
+  margin: 50px 0 20px;
+  color: #305bab;
+  font-size: 18px;
+}
+
+.quantidade-box {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.label-centralizado {
+  text-align: center;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.input-numero {
+  width: 14%;
+  padding: 5px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.checkbox-grupo {
+  display: ;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  font-family: Noto Sans, sans-serif;
+}
+
+.info-prazo {
+  text-align: center;
+  font-size: 12px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.datas label,
+.horarios label {
+  text-align: center;
+  margin-top: 10px;
+  display: block;
+  font-weight: bold;
+}
+
+.input-data,
+.select-hora {
+  width: 28%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  text-align: center;
+}
+.grupo-horarios {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza horizontalmente */
+  gap: 10px;
+  margin: 20px auto;
+  font-weight: bold;
+}
+
+.select-hora {
+  width: 60%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  font-size: 14px;
+  text-align: center;
+}
+
+.caixa-observacao {
+  width: 90%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  resize: none;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.botoes-final {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.botoes-final button {
+  flex: 1;
+  padding: 12px;
+  background-color: #305bab;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.botoes-final button:hover {
+  background-color: #234a92;
+}
+.bolinhas-etapas {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin: 39px auto;
+}
+
+.bolinha {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 2px solid #305bab;
+}
+
+.etapa-ativa {
+  background-color: #305bab;
+}
+.flatpickr-calendar {
+  font-family: Arial, sans-serif;
+  border-radius: 10px;
+  box-shadow: 0 10px 12px rgba(0,0,0,1);
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  background-color: #305bab;
+  color: white;
+  border-radius: 50%;
+}
+#calendario {
+  width: 60%;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  text-align: center;
+  margin: 10px auto 20px auto;
+  display: block;
+}
+.titulo-pagamento {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 45px; /* ajuste conforme necessário */
+  margin-bottom: 5px;
+}
+.subtitulo {
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.resumo-pedido {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+}
+
+.resumo-pedido p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.cupom input {
+  width: 43%;
+  padding: 3px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.valor-final {
+  background-color: #305bab;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.pagamento-opcoes {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 25px;
+}
+
+.pagamento-opcoes label {
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagamento-opcoes input[type="radio"] {
+  transform: scale(1.4);
+}
+
+.seguranca {
+  text-align: center;
+  font-size: 12px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.info-email {
+  text-align: center;
+  font-size: 12px;
+  color: #444;
+  margin-bottom: 30px;
+}
+
+.botoes-pagamento {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.botoes-pagamento button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: #305bab;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botoes-pagamento button:hover {
+  background-color: #234a92;
+}
+.tela-principal {
+  width: 430px;
+  height: 867px;
+  background-color: #cfeeff;
+  border-radius: 30px;
+  margin: 0 auto;
+  overflow-y: auto;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+.icone-pagamento {
+  width: 54px;
+  height: 34px;
+  object-fit: contain;
+  margin-right: 8px;
+}
+
+.pagamento-opcoes label {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 1px;
+}
+.titulo-confirmacao {
+  text-align: center;
+  font-size: 20px;
+  margin: 45px 0;
+}
+
+.info-pedido {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 0 15px 20px;
+  font-size: 14px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.4);
+}
+
+.info-pedido p {
+  margin: 8px 0;
+}
+
+.titulo-andamento {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.linha-do-tempo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 25px;
+}
+
+.etapa {
+  background-color: #fff;
+  padding: 10px 10px;
+  border-radius: 12px;
+  width: 40%;
+  text-align: middle;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.7);
+  font-size: 14px;
+}
+.etapa-destaque {
+  background-color: #7dfda9; /* azul mais claro */
+  box-shadow: 0 4px 12px rgba(48, 91, 171, 1); /* sombra mais forte e azulada */
+  font-weight: bold;
+}
+
+.botoes-comprovante-chat {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.botao-secundario {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #305bab;
+  background-color: white;
+  color: #305bab;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botao-secundario:hover {
+  background-color: #f0f6ff;
+}
+
+.botao-principal {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  padding: 14px;
+  background-color: #305bab;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.botao-principal:hover {
+  background-color: #234a92;
+}
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-conteudo {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  width: 85%;
+  max-width: 360px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  font-size: 14px;
+  position: relative;
+}
+
+.fechar-popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  color: #666;
+}
+
+.chat-mensagens {
+  max-height: 180px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+}
+
+.mensagem-recebida, .mensagem-enviada {
+  padding: 10px;
+  margin: 6px 0;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.mensagem-recebida {
+  background-color: #3f8bb6;
+  text-align: left;
+}
+
+.mensagem-enviada {
+  background-color: #7dc5f9;
+  text-align: right;
+  margin-left: auto;
+}
+
+.chat-input {
+  display: flex;
+  gap: 10px;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.chat-input button {
+  padding: 8px 14px;
+  background-color: #305bab;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.topo-app {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 100;
+}
+
+.menu-btn, .notificacao-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
