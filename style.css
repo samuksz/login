@@ -1043,7 +1043,7 @@ body {
   position: absolute;
   top: 70px;
   left: 20px;
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   z-index: 100;
