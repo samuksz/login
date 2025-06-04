@@ -211,6 +211,7 @@ body {
 
 .painel-notificacoes h3 {
   margin: 50px;
+  text-align: center;
 }
 
 .painel-notificacoes ul {
