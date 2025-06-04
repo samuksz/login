@@ -714,8 +714,7 @@ body {
   display: flex;
   justify-content: center;
   gap: 50px;
-  top: 70px;
-  margin: 39px auto;
+  margin: 70px auto;
 }
 
 .bolinha {
@@ -1051,9 +1050,9 @@ body {
 }
 
 .menu-btn, .notificacao-btn {
-  background: none;
-  border: none;
+  position: absolute;
+  top: 70px;
+  z-index: 10;
   font-size: 22px;
   cursor: pointer;
-  top: 70px;
 }
