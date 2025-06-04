@@ -713,7 +713,8 @@ body {
 .bolinhas-etapas {
   display: flex;
   justify-content: center;
-  gap: 70px;
+  gap: 50px;
+  top: 70px;
   margin: 39px auto;
 }
 
@@ -1055,5 +1056,4 @@ body {
   font-size: 22px;
   cursor: pointer;
   top: 70px;
-  z-index: 10;
 }
